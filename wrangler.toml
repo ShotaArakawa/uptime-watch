@@ -1,0 +1,11 @@
+name = "uptime-watch-api"
+main = "worker/index.ts"
+compatibility_date = "2025-09-01"
+
+# 毎分起動し、各 URL の間隔(1〜60分)が来たものだけチェックする
+[triggers]
+crons = ["* * * * *"]
+
+# 秘密情報は書かない。WEBHOOK_URL などは `wrangler secret put` で設定する想定
+[vars]
+PLAN = "free"
